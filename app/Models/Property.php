@@ -28,6 +28,8 @@ class Property extends Model
         'type',
     ];
 
+    public $incrementing = false;
+
     public function agents()
     {
         return $this->belongsToMany(Agent::class);

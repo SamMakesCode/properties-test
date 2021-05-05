@@ -17,7 +17,6 @@ class CreateAgentPropertyTable extends Migration
             $table->id();
             $table->unsignedInteger('agent_id');
             $table->string('property_id');
-            $table->unsignedTinyInteger('type');
             $table->timestamps();
         });
     }
