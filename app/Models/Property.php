@@ -27,4 +27,9 @@ class Property extends Model
         'price',
         'type',
     ];
+
+    public function agents()
+    {
+        return $this->belongsToMany(Agent::class);
+    }
 }

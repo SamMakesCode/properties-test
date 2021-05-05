@@ -15,4 +15,9 @@ class Agent extends Model
         'phone',
         'address',
     ];
+
+    public function properties()
+    {
+        return $this->belongsToMany(Property::class);
+    }
 }
