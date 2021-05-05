@@ -9,12 +9,22 @@ class Agent extends Model
 {
     use HasFactory;
 
+    protected $appends = [
+        'total_property_value',
+    ];
+
     protected $fillable = [
         'name',
         'email',
         'phone',
         'address',
     ];
+
+    public function getTotalPropertyValueAttribute()
+    {
+        return $this->properties()
+            ->sum('price') / 100;
+    }
 
     public function properties()
     {
